@@ -47,7 +47,7 @@ namespace Game.App
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Game}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

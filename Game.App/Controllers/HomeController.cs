@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Game.App.Controllers
 {
-    public class GameController : Controller
+    public class HomeController : Controller
     {
         [HttpGet]
         public async Task<IActionResult> Index()
