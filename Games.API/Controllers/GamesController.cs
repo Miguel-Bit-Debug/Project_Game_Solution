@@ -22,7 +22,7 @@ namespace Chapter.Sync.API.Controllers
         }
 
         [HttpPost("api/game")]
-        public IActionResult GameAdd([FromBody] GameModel game)
+        public IActionResult GameAdd([FromForm] GameModel game)
         {
             if (game == null)
             {
