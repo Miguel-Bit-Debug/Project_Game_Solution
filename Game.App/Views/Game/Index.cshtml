@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Game.App.Models.GameModel>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.GameId)
+                @foreach (var dado in Model)
+                {
+                    @dado.Descricao
+                }
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Multiplayer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaiorDeIdade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataLancamento)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GameId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descricao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Multiplayer)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaiorDeIdade)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataLancamento)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

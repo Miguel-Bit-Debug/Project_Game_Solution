@@ -34,7 +34,7 @@ namespace Game.API.Repositories
 
         public GameModel ObterGameById(Guid id)
         {
-            return _context.Games.Find(id);
+            return _context.Games.FirstOrDefault(x => x.GameId == id);
         }
 
         public void RemoverGame(GameModel game)
