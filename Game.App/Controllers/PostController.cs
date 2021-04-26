@@ -27,7 +27,7 @@ namespace Game.App.Controllers
                 var content = new StringContent(serializedProduto, Encoding.UTF8, "application/json");
                 var result = await client.PostAsync("http://localhost:5000/api/game/", content);
             }
-            return View("Index", "Home");
+            return RedirectToAction("Index", "Home");
         }
     }
 }
