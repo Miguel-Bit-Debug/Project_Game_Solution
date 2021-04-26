@@ -3,7 +3,7 @@ using Game.API.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using System;
 
-namespace Chapter.Sync.API.Controllers
+namespace Game.API.Controllers
 {
     public class GamesController : Controller
     {

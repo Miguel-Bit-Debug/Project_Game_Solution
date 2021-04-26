@@ -1,4 +1,4 @@
-﻿using Chapter.Sync.API.AppDbContext;
+﻿using Game.API.AppDbContext;
 using Game.API.Models;
 using System;
 using System.Collections.Generic;

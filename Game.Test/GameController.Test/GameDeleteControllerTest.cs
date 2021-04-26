@@ -1,16 +1,10 @@
-﻿using Chapter.Sync.API.AppDbContext;
-using Chapter.Sync.API.Controllers;
-using FluentAssertions;
+﻿using Game.API.AppDbContext;
+using Game.API.Controllers;
 using Game.API.Models;
 using Game.API.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace Game.Test.GameController.Test

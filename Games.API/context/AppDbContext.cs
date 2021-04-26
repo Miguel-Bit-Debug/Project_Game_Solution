@@ -1,7 +1,7 @@
 ﻿using Game.API.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Chapter.Sync.API.AppDbContext
+namespace Game.API.AppDbContext
 {
     public class AppDBContext : DbContext
     {

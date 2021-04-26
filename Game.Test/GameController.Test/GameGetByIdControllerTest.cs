@@ -1,4 +1,4 @@
-﻿using Chapter.Sync.API.Controllers;
+﻿using Game.API.Controllers;
 using Game.API.Models;
 using Game.API.Repositories;
 using Microsoft.AspNetCore.Mvc;

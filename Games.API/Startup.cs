@@ -1,4 +1,4 @@
-using Chapter.Sync.API.AppDbContext;
+using Game.API.AppDbContext;
 using Game.API.Models;
 using Game.API.Repositories;
 using Microsoft.AspNetCore.Builder;
@@ -8,7 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace Chapter.Sync.API
+namespace Game.API
 {
     public class Startup
     {

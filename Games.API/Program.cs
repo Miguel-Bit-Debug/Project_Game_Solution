@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Chapter.Sync.API
+namespace Game.API
 {
     public class Program
     {
