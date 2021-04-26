@@ -1,4 +1,4 @@
-﻿using Game.API.AppDbContext;
+﻿using Game.API.Data;
 using Game.API.Controllers;
 using Game.API.Models;
 using Game.API.Repositories;
