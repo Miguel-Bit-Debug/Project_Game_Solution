@@ -10,13 +10,13 @@ namespace Game.Test.GameController.Test
 {
     public class GameGetByIdControllerTest
     {
-        public Mock<IGameRepository> _gameRepository;
+        public Mock<IGameRepository<GameModel>> _gameRepository;
         public GamesController _controller;
 
 
         public GameGetByIdControllerTest()
         {
-            _gameRepository = new Mock<IGameRepository>();
+            _gameRepository = new Mock<IGameRepository<GameModel>>();
             _controller = new GamesController(_gameRepository.Object);
         }
 

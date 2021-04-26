@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace Game.API.Repositories
 {
-    public class GameRepository : IGameRepository
+    public class GameRepository : IGameRepository<GameModel>
     {
         private readonly AppDBContext _context;
 

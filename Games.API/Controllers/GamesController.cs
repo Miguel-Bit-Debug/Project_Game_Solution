@@ -7,9 +7,9 @@ namespace Chapter.Sync.API.Controllers
 {
     public class GamesController : Controller
     {
-        private readonly IGameRepository _gameRepository;
+        private readonly IGameRepository<GameModel> _gameRepository;
 
-        public GamesController(IGameRepository gameRepository)
+        public GamesController(IGameRepository<GameModel> gameRepository)
         {
             _gameRepository = gameRepository;
         }
@@ -22,7 +22,7 @@ namespace Chapter.Sync.API.Controllers
         }
 
         [HttpPost("api/game")]
-        public IActionResult GameAdd([FromForm] GameModel game)
+        public IActionResult GameAdd([FromBody] GameModel game)
         {
             if (game == null)
             {

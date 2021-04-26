@@ -17,13 +17,13 @@ namespace Game.Test.GameController.Test
 {
     public class GameDeleteControllerTest
     {
-        public Mock<IGameRepository> _repository;
+        public Mock<IGameRepository<GameModel>> _repository;
         public GamesController _controller;
         public AppDBContext _context;
 
         public GameDeleteControllerTest()
         {
-            _repository = new Mock<IGameRepository>();
+            _repository = new Mock<IGameRepository<GameModel>>();
             _controller = new GamesController(_repository.Object);
         }
 

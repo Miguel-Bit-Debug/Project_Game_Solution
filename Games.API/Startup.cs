@@ -1,4 +1,5 @@
 using Chapter.Sync.API.AppDbContext;
+using Game.API.Models;
 using Game.API.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -23,7 +24,7 @@ namespace Chapter.Sync.API
         {
             services.AddControllers();
 
-            services.AddTransient<IGameRepository, GameRepository>();
+            services.AddTransient<IGameRepository<GameModel>, GameRepository>();
 
             services.AddDbContext<AppDBContext>(options => {
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));

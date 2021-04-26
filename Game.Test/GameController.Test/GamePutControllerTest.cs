@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Game.Test.GameController.Test
 {
-    class GamePutControllerTest
+    public class GamePutControllerTest
     {
     }
 }

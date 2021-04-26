@@ -1,4 +1,5 @@
 ﻿using Chapter.Sync.API.Controllers;
+using Game.API.Models;
 using Game.API.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
@@ -8,12 +9,12 @@ namespace Game.Test.GameController.Test
 {
     public class GameGetControllersTest
     {
-        private Mock<IGameRepository> _repository;
+        private Mock<IGameRepository<GameModel>> _repository;
         private GamesController _controller;
 
         public GameGetControllersTest()
         {
-            _repository = new Mock<IGameRepository>();
+            _repository = new Mock<IGameRepository<GameModel>>();
             _controller = new GamesController(_repository.Object);
 
         }
