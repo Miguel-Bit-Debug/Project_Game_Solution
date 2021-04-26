@@ -11,11 +11,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\Games.API\Games.API.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Games.API\Games.API.csproj" />
+    <Folder Include="Views\Home\" />
   </ItemGroup>
 
 </Project>
