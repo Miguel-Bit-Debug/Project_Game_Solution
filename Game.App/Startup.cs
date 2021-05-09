@@ -20,6 +20,7 @@ namespace Game.App
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddHttpClient();
+            services.AddCors();
             services.AddControllersWithViews();
 
             services.AddDbContext<GameAppContext>(options =>
@@ -40,6 +41,7 @@ namespace Game.App
             app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseCors();
 
             app.UseAuthorization();
 

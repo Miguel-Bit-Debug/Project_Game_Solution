@@ -23,6 +23,7 @@ namespace Game.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddCors();
 
             services.AddTransient<IGameRepository<GameModel>, GameRepository>();
 
@@ -42,6 +43,8 @@ namespace Game.API
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors();
 
             app.UseAuthorization();
 
