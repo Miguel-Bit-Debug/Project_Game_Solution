@@ -10,16 +10,16 @@ using System.Threading.Tasks;
 
 namespace Game.App.Controllers
 {
-    public class PostController : Controller
+    public class CreateController : Controller
     {
-            [HttpGet]
-            public IActionResult Index()
-            {
-                return View();
+        [HttpGet]
+        public IActionResult Index()
+        {
+            return View();
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Add([FromForm]GameModel game)
+        [HttpPost, ActionName("Index")]
+        public async Task<IActionResult> Create([FromForm] GameModel game)
         {
             using (var client = new HttpClient())
             {

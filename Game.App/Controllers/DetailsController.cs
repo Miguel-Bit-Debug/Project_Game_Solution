@@ -13,7 +13,7 @@ namespace Game.App.Controllers
         public async Task<IActionResult> Index(Guid id)
         {
             GameModel game = new GameModel();
-            using(var httpClient = new HttpClient())
+            using (var httpClient = new HttpClient())
             {
                 using (var response = await httpClient.GetAsync($"http://localhost:5000/api/game/{id}"))
                 {
