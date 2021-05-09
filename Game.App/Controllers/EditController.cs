@@ -5,12 +5,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace Game.App.Controllers
 {
-    public class DeleteController : Controller
+    public class EditController : Controller
     {
+        [HttpGet]
         public async Task<IActionResult> Index(Guid? id)
         {
             var game = new GameModel();
@@ -28,18 +30,14 @@ namespace Game.App.Controllers
 
         [HttpPost, ActionName("Index")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(Guid id)
+        public async Task<IActionResult> EditConfirmed(Guid id, [Bind("GameId,Nome,Descricao,Multiplayer,MaiorDeIdade,DataLancamento")] GameModel game)
         {
-            var game = new GameModel();
-            using (var httpClient = new HttpClient())
+            using (var client = new HttpClient())
             {
-                using (var response = await httpClient.DeleteAsync($"http://localhost:5000/api/game/{id}"))
-                {
-                    var apiResponse = await response.Content.ReadAsStringAsync();
-                    game = JsonConvert.DeserializeObject<GameModel>(apiResponse);
-                }
+                var serializedProduto = JsonConvert.SerializeObject(game);
+                var content = new StringContent(serializedProduto, Encoding.UTF8, "application/json");
+                var result = await client.PutAsync($"http://localhost:5000/api/game/{id}", content);
             }
-
             return RedirectToAction("Index", "Home");
         }
     }

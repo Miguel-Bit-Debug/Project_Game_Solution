@@ -1,27 +1,56 @@
-﻿@model IEnumerable<GameModel>
+﻿@model IEnumerable<Game.App.Models.GameModel>
 
-<table class="table table-sm table-bordered m-2 text-center">
+<h1>IndexHome</h1>
+
+<p>
+    <a asp-controller="Create" asp-action="Index">Create New</a>
+</p>
+<table class="table">
     <thead>
         <tr>
-            <th>Nome</th>
-            <th>Multiplayer</th>
-            <th>Maior De Idade</th>
-            <th>Data de Lançamento</th>
-            <a asp-controller="Post" asp-action="Index" class="btn btn-warning">Adicionar Game</a>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Multiplayer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaiorDeIdade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataLancamento)
+            </th>
+            <th></th>
         </tr>
     </thead>
-    @foreach (var dado in Model)
-    {
-        <tr>
-            <td>@dado.Nome</td>
-            <td>@(dado.Multiplayer == true ? "Sim": "Não")</td>
-            <td>@(dado.MaiorDeIdade == true ? "Sim" : "Não")</td>
-            <td>
-                @dado.DataLancamento.Date <a asp-controller="Details"
-                                             asp-action="Index" asp-route-id="@dado.GameId"
-                                             class="btn btn-primary ml-2">Saiba mais</a>
-        </td>
-
-    </tr>
-}
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descricao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Multiplayer)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaiorDeIdade)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataLancamento)
+                </td>
+                <td>
+                    <a asp-controller="Edit" asp-action="Index" asp-route-id="@item.GameId">Edit</a> |
+                    <a asp-controller="details" asp-action="Index" asp-route-id="@item.GameId">Details</a> |
+                    <a asp-controller="Delete" asp-action="Index" asp-route-id="@item.GameId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
 </table>
