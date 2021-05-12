@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using Game.App.Data;
 using Game.App.Models;
 using System.Net.Http;
 using Newtonsoft.Json;
-using System.Text;
 
 namespace Game.App.Controllers
 {

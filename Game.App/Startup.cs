@@ -4,7 +4,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
-using Game.App.Data;
 
 namespace Game.App
 {
@@ -22,9 +21,6 @@ namespace Game.App
             services.AddHttpClient();
             services.AddCors();
             services.AddControllersWithViews();
-
-            services.AddDbContext<GameAppContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("GameAppContext")));
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
