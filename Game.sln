@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Games.API", "Games.API\Game
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Game.App", "Game.App\Game.App.csproj", "{A49E0694-9038-429F-857F-42DF7138AFAA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game.Test", "Game.Test\Game.Test.csproj", "{E27C57CC-037C-48C5-8BB5-E47BA863D635}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A49E0694-9038-429F-857F-42DF7138AFAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A49E0694-9038-429F-857F-42DF7138AFAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A49E0694-9038-429F-857F-42DF7138AFAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E27C57CC-037C-48C5-8BB5-E47BA863D635}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E27C57CC-037C-48C5-8BB5-E47BA863D635}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E27C57CC-037C-48C5-8BB5-E47BA863D635}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E27C57CC-037C-48C5-8BB5-E47BA863D635}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
