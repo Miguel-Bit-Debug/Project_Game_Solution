@@ -37,7 +37,12 @@ namespace Game.App
             app.UseStaticFiles();
 
             app.UseRouting();
-            app.UseCors();
+            app.UseCors((options) =>
+            {
+                options.AllowAnyHeader();
+                options.AllowAnyMethod();
+                options.AllowAnyOrigin();
+            });
 
             app.UseAuthorization();
 
