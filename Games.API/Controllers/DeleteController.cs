@@ -2,6 +2,7 @@
 using Game.API.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Threading.Tasks;
 
 namespace Games.API.Controllers
 {
@@ -15,12 +16,12 @@ namespace Games.API.Controllers
         }
 
         [HttpDelete("api/game/{id}")]
-        public IActionResult Remove(Guid id)
+        public async Task<ActionResult> Remove(Guid id)
         {
             try
             {
                 var game = _gameRepository.ObterGameById(id);
-                _gameRepository.RemoverGame(game);
+                await _gameRepository.RemoverGame(game);
                 return NoContent();
             }
             catch (Exception ex)

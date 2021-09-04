@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Game.API.Repositories
 {
@@ -15,17 +16,17 @@ namespace Game.API.Repositories
         {
             _context = context;
         }
-        public void AdicionarGame(GameModel game)
+        public async Task AdicionarGame(GameModel game)
         {
-            _context.Add(game);
+            await _context.AddAsync(game);
             _context.SaveChanges();
         }
 
-        public void AlterarGame(GameModel game)
+        public async Task AlterarGame(GameModel game)
         {
             var gameAntigo = _context.Games.FirstOrDefault(g => g.GameId == game.GameId);
             _context.Update(game);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
 
         public IEnumerable<GameModel> ListarGame()
@@ -38,10 +39,10 @@ namespace Game.API.Repositories
             return _context.Games.FirstOrDefault(x => x.GameId == id);
         }
 
-        public void RemoverGame(GameModel game)
+        public async Task RemoverGame(GameModel game)
         {
             _context.Remove(game);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
     }
 }

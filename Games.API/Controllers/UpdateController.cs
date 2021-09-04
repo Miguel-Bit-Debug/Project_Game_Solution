@@ -2,6 +2,7 @@
 using Game.API.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Threading.Tasks;
 
 namespace Games.API.Controllers
 {
@@ -15,7 +16,7 @@ namespace Games.API.Controllers
         }
 
         [HttpPut("api/game/{id}")]
-        public IActionResult Update(Guid id, [FromBody] GameModel game)
+        public async Task<ActionResult> Update(Guid id, [FromBody] GameModel game)
         {
             var gameAntigo = _gameRepository.ObterGameById(id);
             if (gameAntigo == null)
@@ -30,7 +31,7 @@ namespace Games.API.Controllers
             gameAntigo.MaiorDeIdade = game.MaiorDeIdade;
             gameAntigo.DataLancamento = game.DataLancamento;
 
-            _gameRepository.AlterarGame(gameAntigo);
+            await _gameRepository.AlterarGame(gameAntigo);
 
             return Ok(game);
         }

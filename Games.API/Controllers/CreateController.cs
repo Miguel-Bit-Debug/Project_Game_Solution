@@ -1,6 +1,7 @@
 ﻿using Game.Library.Models;
 using Game.API.Repositories;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace Games.API.Controllers
 {
@@ -16,14 +17,14 @@ namespace Games.API.Controllers
         public IGameRepository<GameModel> GameRepository => _gameRepository;
 
         [HttpPost("api/game")]
-        public IActionResult Create([FromBody] GameModel game)
+        public async Task<ActionResult> Create([FromBody] GameModel game)
         {
             if (game == null)
             {
                 return BadRequest();
             }
 
-            GameRepository.AdicionarGame(game);
+            await GameRepository.AdicionarGame(game);
             return Created("", game);
         }
     }
