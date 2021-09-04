@@ -1,6 +1,10 @@
 using Game.API.Data;
 using Game.API.Repositories;
 using Game.Library.Models;
+<<<<<<< Updated upstream
+=======
+using Games.API.auth.interfaces;
+>>>>>>> Stashed changes
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
