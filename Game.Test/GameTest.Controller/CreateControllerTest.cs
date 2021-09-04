@@ -1,4 +1,4 @@
-﻿using Game.API.Models;
+﻿using Game.Library.Models;
 using Game.API.Repositories;
 using Games.API.Controllers;
 using Microsoft.AspNetCore.Mvc;

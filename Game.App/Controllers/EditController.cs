@@ -1,4 +1,4 @@
-﻿using Game.App.Models;
+﻿using Game.Library.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System;

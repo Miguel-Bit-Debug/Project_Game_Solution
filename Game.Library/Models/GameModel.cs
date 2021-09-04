@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Game.App.Models
+namespace Game.Library.Models
 {
     public class GameModel
     {
