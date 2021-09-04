@@ -26,5 +26,18 @@ namespace Game.App.Controllers
             }
             return RedirectToAction("Index", "Home");
         }
+
+        [HttpPost]
+        public async Task<ActionResult> SendImageAsync([FromForm] IFormFile file)
+        {
+            using (var httpClient = new HttpClient())
+            {
+                var serializedImage = JsonConvert.SerializeObject(file);
+                var content = new StringContent(serializedImage, Encoding.UTF8, "application/json");
+                var result = await httpClient.PostAsync("http://localhost:5000/api/game/upload", content);
+            }
+
+            return RedirectToAction("Index", "Home");
+        }
     }
 }

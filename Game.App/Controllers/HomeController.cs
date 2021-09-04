@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Game.App.Models;
+using Game.Library.Models;
 using System.Net.Http;
 using Newtonsoft.Json;
 

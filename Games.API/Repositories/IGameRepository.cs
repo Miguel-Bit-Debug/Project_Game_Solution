@@ -1,5 +1,4 @@
-﻿using Game.API.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace Game.API.Repositories
