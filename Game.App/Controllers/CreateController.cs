@@ -1,4 +1,5 @@
-﻿using Game.App.Models;
+﻿using Game.Library.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Net.Http;
@@ -24,6 +25,19 @@ namespace Game.App.Controllers
                 var content = new StringContent(serializedProduto, Encoding.UTF8, "application/json");
                 var result = await client.PostAsync("http://localhost:5000/api/game/", content);
             }
+            return RedirectToAction("Index", "Home");
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> SendImageAsync([FromForm] IFormFile file)
+        {
+            using (var httpClient = new HttpClient())
+            {
+                var serializedImage = JsonConvert.SerializeObject(file);
+                var content = new StringContent(serializedImage, Encoding.UTF8, "application/json");
+                var result = await httpClient.PostAsync("http://localhost:5000/api/game/upload", content);
+            }
+
             return RedirectToAction("Index", "Home");
         }
     }

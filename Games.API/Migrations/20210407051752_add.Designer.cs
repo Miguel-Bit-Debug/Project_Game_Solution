@@ -21,7 +21,7 @@ namespace Games.API.Migrations
                 .HasAnnotation("ProductVersion", "5.0.5")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Game.API.Models.GameModel", b =>
+            modelBuilder.Entity("Game.Library.Models.GameModel", b =>
                 {
                     b.Property<Guid>("GameId")
                         .ValueGeneratedOnAdd()

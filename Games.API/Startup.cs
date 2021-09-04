@@ -1,12 +1,13 @@
 using Game.API.Data;
-using Game.API.Models;
 using Game.API.Repositories;
+using Game.Library.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System.Linq;
 
 namespace Game.API
 {
@@ -24,7 +25,9 @@ namespace Game.API
             services.AddControllers();
             services.AddCors();
             services.AddTransient<IGameRepository<GameModel>, GameRepository>();
-            services.AddDbContext<AppDBContext>(options => {
+
+            services.AddDbContext<AppDBContext>(options =>
+            {
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
         }
@@ -42,6 +45,7 @@ namespace Game.API
 
             app.UseCors();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
