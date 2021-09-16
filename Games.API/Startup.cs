@@ -43,7 +43,12 @@ namespace Game.API
 
             app.UseRouting();
 
-            app.UseCors();
+            app.UseCors(opt =>
+            {
+                opt.AllowAnyHeader();
+                opt.AllowAnyMethod();
+                opt.AllowAnyOrigin();
+            });
 
             app.UseAuthentication();
             app.UseAuthorization();
