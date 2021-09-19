@@ -1,17 +1,11 @@
 using Game.API.Data;
-using Game.API.Repositories;
-using Game.Library.Models;
-<<<<<<< Updated upstream
-=======
-using Games.API.auth.interfaces;
->>>>>>> Stashed changes
+using Games.API.DependencyInjection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System.Linq;
 
 namespace Game.API
 {
@@ -28,7 +22,7 @@ namespace Game.API
         {
             services.AddControllers();
             services.AddCors();
-            services.AddTransient<IGameRepository<GameModel>, GameRepository>();
+            services.AddDependencyInjection();
 
             services.AddDbContext<AppDBContext>(options =>
             {
@@ -47,7 +41,12 @@ namespace Game.API
 
             app.UseRouting();
 
-            app.UseCors();
+            app.UseCors(opt =>
+            {
+                opt.AllowAnyHeader();
+                opt.AllowAnyMethod();
+                opt.AllowAnyOrigin();
+            });
 
             app.UseAuthentication();
             app.UseAuthorization();

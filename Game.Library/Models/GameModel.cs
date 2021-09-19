@@ -3,15 +3,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Game.Library.Models
 {
-    public class GameModel
+    public class GameModel : GameBaseModel
     {
-        public GameModel()
-        {
-            GameId = Guid.NewGuid();
-        }
-
-        [Key]
-        public Guid GameId { get; set; }
         public string Nome { get; set; }
         public string Descricao { get; set; }
         public bool Multiplayer { get; set; }

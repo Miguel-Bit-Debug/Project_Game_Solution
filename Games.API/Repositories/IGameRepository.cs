@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Game.API.Repositories
 {
-    public interface IGameRepository<T>
+    public interface IGameRepository<T> where T : class
     {
-        void AdicionarGame(T game);
-        void AlterarGame(T game);
+        Task AdicionarGame(T game);
+        Task AlterarGame(T game);
         IEnumerable<T> ListarGame();
         T ObterGameById(Guid id);
-        void RemoverGame(T game);
+        Task RemoverGame(T game);
     }
 }
