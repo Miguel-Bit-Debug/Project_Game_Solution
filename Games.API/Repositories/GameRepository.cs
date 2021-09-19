@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Game.API.Repositories
 {
-    public class GameRepository : IGameRepository<GameModel>
+    public class GameRepository<T> : IGameRepository<GameModel> where T : class
     {
         private readonly AppDBContext _context;
 

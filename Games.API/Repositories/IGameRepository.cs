@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace Game.API.Repositories
 {
-    public interface IGameRepository<T>
+    public interface IGameRepository<T> where T : class
     {
         Task AdicionarGame(T game);
         Task AlterarGame(T game);
