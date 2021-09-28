@@ -5,14 +5,14 @@ using System.Text;
 
 namespace Game.Library.Models
 {
-    public class GameBaseModel
+    public abstract class BaseModel
     {
-        public GameBaseModel()
+        public BaseModel()
         {
-            GameId = Guid.NewGuid();
+            Id = Guid.NewGuid();
         }
 
         [Key]
-        public Guid GameId { get; set; }
+        public Guid Id { get; set; }
     }
 }

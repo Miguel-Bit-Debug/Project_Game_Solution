@@ -6,9 +6,9 @@ namespace Games.API.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IGameRepository<GameModel> _gameRepository;
+        private readonly IGenericRepository<GameModel> _gameRepository;
 
-        public HomeController(IGameRepository<GameModel> gameRepository)
+        public HomeController(IGenericRepository<GameModel> gameRepository)
         {
             _gameRepository = gameRepository;
         }
@@ -16,7 +16,7 @@ namespace Games.API.Controllers
         [HttpGet("api/game")]
         public IActionResult Index()
         {
-            var game = _gameRepository.ListarGame();
+            var game = _gameRepository.List();
             return Ok(game);
         }
     }

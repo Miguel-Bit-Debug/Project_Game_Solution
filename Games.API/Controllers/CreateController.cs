@@ -7,14 +7,14 @@ namespace Games.API.Controllers
 {
     public class CreateController : Controller
     {
-        private readonly IGameRepository<GameModel> _gameRepository;
+        private readonly IGenericRepository<GameModel> _gameRepository;
 
-        public CreateController(IGameRepository<GameModel> gameRepository)
+        public CreateController(IGenericRepository<GameModel> gameRepository)
         {
             _gameRepository = gameRepository;
         }
 
-        public IGameRepository<GameModel> GameRepository => _gameRepository;
+        public IGenericRepository<GameModel> GameRepository => _gameRepository;
 
         [HttpPost("api/game")]
         public async Task<ActionResult> Create([FromBody] GameModel game)
@@ -24,7 +24,7 @@ namespace Games.API.Controllers
                 return BadRequest();
             }
 
-            await GameRepository.AdicionarGame(game);
+            await GameRepository.AddAsync(game);
             return Created("", game);
         }
     }

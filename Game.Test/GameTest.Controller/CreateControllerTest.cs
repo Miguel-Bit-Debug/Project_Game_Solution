@@ -12,11 +12,11 @@ namespace Game.Test.GameTest.Controller
     public class CreateControllerTest
     {
         public CreateController _gameController;
-        public Mock<IGameRepository<GameModel>> _gameRepository;
+        public Mock<IGenericRepository<GameModel>> _gameRepository;
 
         public CreateControllerTest()
         {
-            _gameRepository = new Mock<IGameRepository<GameModel>>();
+            _gameRepository = new Mock<IGenericRepository<GameModel>>();
             _gameController = new CreateController(_gameRepository.Object);
         }
         [Fact]

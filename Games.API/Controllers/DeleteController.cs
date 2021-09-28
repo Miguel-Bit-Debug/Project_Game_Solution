@@ -8,9 +8,9 @@ namespace Games.API.Controllers
 {
     public class DeleteController : Controller
     {
-        private readonly IGameRepository<GameModel> _gameRepository;
+        private readonly IGenericRepository<GameModel> _gameRepository;
 
-        public DeleteController(IGameRepository<GameModel> gameRepository)
+        public DeleteController(IGenericRepository<GameModel> gameRepository)
         {
             _gameRepository = gameRepository;
         }
@@ -20,8 +20,8 @@ namespace Games.API.Controllers
         {
             try
             {
-                var game = _gameRepository.ObterGameById(id);
-                await _gameRepository.RemoverGame(game);
+                var game = _gameRepository.GetById(id);
+                await _gameRepository.RemoveAsync(game);
                 return NoContent();
             }
             catch (Exception ex)

@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Game.Library.Models
 {
-    public class GameModel : GameBaseModel
+    public class GameModel : BaseModel
     {
         public string Nome { get; set; }
         public string Descricao { get; set; }

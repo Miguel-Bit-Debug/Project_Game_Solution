@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Game.App", "Game.App\Game.A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Game.Test", "Game.Test\Game.Test.csproj", "{E27C57CC-037C-48C5-8BB5-E47BA863D635}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game.Library", "Game.Library\Game.Library.csproj", "{264334FA-FDDA-46EF-A2F7-C94518139439}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Game.Library", "Game.Library\Game.Library.csproj", "{264334FA-FDDA-46EF-A2F7-C94518139439}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

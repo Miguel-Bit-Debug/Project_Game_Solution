@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Game.API.Repositories
 {
-    public class GameRepository : IGameRepository<GameModel>
+    public class GameRepository<T> : IGenericRepository<GameModel> where T : class
     {
         private readonly AppDBContext _context;
 
@@ -16,30 +16,30 @@ namespace Game.API.Repositories
         {
             _context = context;
         }
-        public async Task AdicionarGame(GameModel game)
+        public async Task AddAsync(GameModel game)
         {
             await _context.AddAsync(game);
             _context.SaveChanges();
         }
 
-        public async Task AlterarGame(GameModel game)
+        public async Task UpdateAsync(GameModel game)
         {
-            var gameAntigo = _context.Games.FirstOrDefault(g => g.GameId == game.GameId);
+            var gameAntigo = _context.Games.FirstOrDefault(g => g.Id == game.Id);
             _context.Update(game);
             await _context.SaveChangesAsync();
         }
 
-        public IEnumerable<GameModel> ListarGame()
+        public IEnumerable<GameModel> List()
         {
-            return _context.Games;
+            return _context.Games.OrderBy(x => x.Nome);
         }
 
-        public GameModel ObterGameById(Guid id)
+        public GameModel GetById(Guid id)
         {
-            return _context.Games.FirstOrDefault(x => x.GameId == id);
+            return _context.Games.FirstOrDefault(x => x.Id == id);
         }
 
-        public async Task RemoverGame(GameModel game)
+        public async Task RemoveAsync(GameModel game)
         {
             _context.Remove(game);
             await _context.SaveChangesAsync();
