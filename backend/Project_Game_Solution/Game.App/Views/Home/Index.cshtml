@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Game.Library.Models.GameModel>
+
+<h1>IndexHome</h1>
+
+<p>
+    <a type="button" class="btn btn-outline-danger" asp-controller="Create" asp-action="Index">Novo Jogo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Multiplayer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaiorDeIdade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataLancamento)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descricao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Multiplayer)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaiorDeIdade)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataLancamento)
+                </td>
+                <td>
+                    <a asp-controller="Edit" asp-action="Index" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-controller="details" asp-action="Index" asp-route-id="@item.Id">Details</a> |
+                    <a asp-controller="Delete" asp-action="Index" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
